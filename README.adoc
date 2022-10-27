@@ -16,7 +16,6 @@ Nanopore Basecaller Training
 
 [source,shell]
 ----
-conda update -n base -c defaults conda
 conda create -n hrlaxh_bonito python=3.8 pip 
 conda activate --stack hrlaxh_bonito
 pip install --extra-index-url https://download.pytorch.org/whl/cu116 ont-bonito
