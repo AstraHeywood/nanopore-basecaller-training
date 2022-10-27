@@ -3,8 +3,6 @@
 Nanopore Basecaller Training
 ============================
 
-Several folks are interested, trying to centralize the info.
-
 :toc:
 :toc-placement: preamble
 :toclevels: 1
