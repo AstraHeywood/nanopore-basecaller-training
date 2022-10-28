@@ -29,10 +29,13 @@ conda install -c anaconda cudatoolkit
 ----
 
 Change cu113 on the command below to your CUDA version: 
-To get cuda version: From Ben below:
+To get cuda version: 
+
+----
 [12:03][hrabxw@wkoppg34:~] $ rpm -qa|grep cuda
 nvidia-driver-latest-dkms-cuda-libs-520.61.05-1.el7.x86_64
 nvidia-driver-latest-dkms-cuda-520.61.05-1.el7.x86_64
+----
 
 [source,shell]
 ----
