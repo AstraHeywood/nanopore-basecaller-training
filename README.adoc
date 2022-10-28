@@ -3,6 +3,8 @@
 Nanopore Basecaller Training
 ============================
 
+https://github.com/nanoporetech/bonito
+
 :toc:
 :toc-placement: preamble
 :toclevels: 1
@@ -12,19 +14,29 @@ Nanopore Basecaller Training
 
 == Getting Started
 
-=== Install Bonito
-
 [source,shell]
 ----
 conda create -n hrlaxh_bonito python=3.8 pip 
 conda activate --stack hrlaxh_bonito
 ----
 
-Change cu116 on the command below to your CUDA version (run nvidia-smi to find it, it'll be on the top right)
+There are CUDA libraries installed on the powerplant GPU hosts but the runtime libraries, e.g. libcudart.so.11.3 need to be installed into the env of your analysis, which is easiest with conda.
+
 
 [source,shell]
 ----
-pip install --extra-index-url https://download.pytorch.org/whl/cu116 ont-bonito
+conda install -c anaconda cudatoolkit
+----
+
+Change cu113 on the command below to your CUDA version: 
+To get cuda version: From Ben below:
+[12:03][hrabxw@wkoppg34:~] $ rpm -qa|grep cuda
+nvidia-driver-latest-dkms-cuda-libs-520.61.05-1.el7.x86_64
+nvidia-driver-latest-dkms-cuda-520.61.05-1.el7.x86_64
+
+[source,shell]
+----
+pip install --no-cache-dir --extra-index-url https://download.pytorch.org/whl/cu113 ont-bonito
 pip install -r bonito/requirements.txt
 ----
 
