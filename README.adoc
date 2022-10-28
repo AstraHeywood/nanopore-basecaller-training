@@ -40,14 +40,13 @@ nvidia-driver-latest-dkms-cuda-520.61.05-1.el7.x86_64
 [source,shell]
 ----
 pip install --no-cache-dir --extra-index-url https://download.pytorch.org/whl/cu113 ont-bonito
-pip install -r bonito/requirements.txt
 ----
 
-=== Download Models
+=== Show then download all Models
 [source,shell]
 ----
 bonito download --models --show
-bonito download --models --all
+bonito download --models
 ----
 
 You can cancel it at the training data (I think?). 
