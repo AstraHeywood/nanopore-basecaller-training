@@ -54,7 +54,8 @@ You can cancel it at the training data (I think?).
 === Create a minimap2 index
 [source,shell]
 ----
-minimap2 -d index.mmi assembly.fasta
+module load minimap2/2.22
+minimap2 -d index.mmi Ref/Russell_ASM2_V2_phase_0.all.fsa
 ----
 
 === Basecall with --save-ctc
