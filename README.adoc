@@ -59,7 +59,7 @@ minimap2 -d index.mmi Ref/Russell_ASM2_V2_phase_0.all.fsa
 ----
 
 === Basecall with --save-ctc
-==== Trying this now
+
 [source,shell]
 ----
 bonito basecaller dna_r9.4.1_e8_sup@v3.3 ~/all_fast5/ --batchsize 384 --reference index.mmi --save-ctc --recursive --device "cuda:0" --alignment-threads 16 > basecalled-default-model/basecalls.sam
@@ -69,4 +69,10 @@ NOTE: It has to be in the order as above, or the ctc will not save! basecaller m
 
 Default batch size is 32 (I'm 90% certain). Best to try and increase it. When it crashes from memory, best to killall bonito from another shell. I can get batchsize of 384 and it cuts a little over half an hour off on my dataset (51Gb of fast5 files). And we can work with that number on the following steps.
 
+=== Train
+
+[source,shell]
+----
+bonito train --restore-optim --epochs 3 --batch 36 --lr 1e-6 --pretrained dna_r9.4.1_e8_sup@v3.3 --directory basecalled-default-model
+----
 
