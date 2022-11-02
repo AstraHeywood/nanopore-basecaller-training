@@ -73,6 +73,6 @@ Default batch size is 32 (I'm 90% certain). Best to try and increase it. When it
 
 [source,shell]
 ----
-bonito train --restore-optim --epochs 3 --batch 36 --lr 1e-6 --pretrained dna_r9.4.1_e8_sup@v3.3 --directory basecalled-default-model
+bonito train -f --restore-optim --epochs 3 --batch 36 --lr 1e-6 --pretrained dna_r9.4.1_e8_sup@v3.3 --directory basecalled-default-model ./fine-tuned-model
 ----
 
